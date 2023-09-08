@@ -16,7 +16,7 @@ class JsonUtil {
      * @param obj
      * @return java.lang.String
      */
-    static String serialize(Object obj) {
+    static String toJsonStr(Object obj) {
         if (obj == null) {
             return null;
         }

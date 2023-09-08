@@ -71,6 +71,6 @@ class TestRunner {
 
     @Test
     void test() {
-        grinder.logger.info(params)
+        grinder.logger.info(JsonUtil.toJsonStr(params))
     }
 }
