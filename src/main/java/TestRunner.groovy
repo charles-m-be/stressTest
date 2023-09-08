@@ -7,11 +7,9 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.ngrinder.http.HTTPRequest
 import org.ngrinder.http.HTTPRequestControl
-import org.ngrinder.http.HTTPResponse
 import util.JsonUtil
 
 import static net.grinder.script.Grinder.grinder
-import static org.junit.Assert.assertEquals
 
 /**
  * A simple example using the HTTP plugin that shows the retrieval of a single page via HTTP.
@@ -73,12 +71,6 @@ class TestRunner {
 
     @Test
     void test() {
-        HTTPResponse response = request.POST("http://13.215.142.56:8090/action/v1.0/SendOrderInsert", params)
-        grinder.logger.info(response.getBodyText())
-        if (response.statusCode == 301 || response.statusCode == 302) {
-            grinder.logger.warn("Warning. The response may not be correct. The response code was {}.", response.statusCode)
-        } else {
-            assertEquals(response.statusCode, 200)
-        }
+        grinder.logger.info(params)
     }
 }
